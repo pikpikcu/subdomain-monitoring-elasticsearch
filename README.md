@@ -13,6 +13,12 @@ sudo apt-get install elasticsearch
 sudo systemctl start elasticsearch
 sudo systemctl enable elasticsearch
 ```
+
+***Reset Password elasticsearch***
+- Edit File: `/etc/elasticsearch/elasticsearch.yml` and added this line `xpack.security.enabled: true`
+- run command: `./usr/share/elasticsearch/bin/elasticsearch-setup-passwords interactive`
+- Edit file `certstream.conf` and `tlsx.conf` Replace IP elasticsearch and user/password `[Default User: elastic]`.
+
 ### Example
 ***certstream***
 - install certstream
