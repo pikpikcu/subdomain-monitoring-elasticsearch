@@ -43,5 +43,19 @@ OR
 
 uncover -silent -e 'ssl:"*.tesla.com"' -f ip | tlsx -json -silent -cn -nc -l | sudo filebeat -c tlsx/tlsx.yml -e
 
+loop
+#!/bin/bash
+
+# Fetch the list of domains and save it to a file
+curl -s "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/domains.txt" > domains.txt
+
+# Read the file line by line
+while IFS= read -r domain; do
+  # Use uncover tool on each domain
+  uncover -q "ssl:\"$domain\"" -silent -f ip | tlsx -json -silent -cn -nc -l | sudo filebeat -c tlsx/tlsx.yml -e
+done < domains.txt
+
+# Clean up
+rm domains.txt
 ```
 ![certstream](tlsx/2.png)
