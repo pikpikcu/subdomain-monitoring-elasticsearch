@@ -64,4 +64,19 @@ done < domains.txt
 # Clean up
 rm domains.txt
 ```
-![certstream](tlsx/2.png)
+![tlsx](tlsx/2.png)
+
+***Nuclei Report In elasticsearch***
+- Nuclei Report [https://docs.projectdiscovery.io/tools/nuclei/running](https://docs.projectdiscovery.io/tools/nuclei/running#nuclei-reporting)
+```yaml
+elasticsearch:
+  host: ""
+  ip: ""
+  port: 9200
+  ssl: false
+  ssl-verification: false
+  username: ""
+  password: ""
+  index-name: "nuclei-scanner"
+```
+![nuclei](nuclei.png)
