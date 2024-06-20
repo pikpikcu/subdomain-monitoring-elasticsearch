@@ -58,7 +58,7 @@ curl -s "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/dat
 # Read the file line by line
 while IFS= read -r domain; do
   # Use uncover tool on each domain
-  uncover -q "ssl:\"$domain\"" -silent -f ip | tlsx -json -silent -cn -nc -l | sudo filebeat -c tlsx/tlsx.yml -e
+  uncover -q "ssl:\"$domain\"" -silent -f ip | tlsx -json -silent -cn -nc | sudo filebeat -c tlsx/tlsx.yml -e
 done < domains.txt
 
 # Clean up
