@@ -32,10 +32,16 @@ sudo websocat -t - autoreconnect:wss://certstream.calidog.io  | sudo filebeat -c
 ```bash
 go install github.com/projectdiscovery/tlsx/cmd/tlsx@latest
 go install -v github.com/projectdiscovery/uncover/cmd/uncover@latest
+go install -v github.com/projectdiscovery/mapcidr/cmd/mapcidr@latest
 ```
 Downloads File IPs Ranges `https://github.com/lord-alfred/ipranges`
 ```bash
 sudo /usr/share/logstash/bin/logstash -f tlsx/tlsx.conf
-cat ipv4.txt | uncover -silent | tlsx -json -silent -cn -nc -l | sudo filebeat -c tlsx/tlsx.yml -e
+cat ipv4.txt | mapcidr -silent | tlsx -json -silent -cn -nc -l | sudo filebeat -c tlsx/tlsx.yml -e
+
+OR
+
+uncover -silent -e 'ssl:"*.tesla.com"' -f ip | tlsx -json -silent -cn -nc -l | sudo filebeat -c tlsx/tlsx.yml -e
+
 ```
 ![certstream](tlsx/2.png)
