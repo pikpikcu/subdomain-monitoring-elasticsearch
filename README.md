@@ -80,3 +80,16 @@ elasticsearch:
   index-name: "nuclei-scanner"
 ```
 ![nuclei](nuclei.png)
+
+***BBOT Scanners***
+
+BBOT Integration [Here](https://www.elastic.co/docs/current/integrations/bbot)
+
+![bbot](bbot.png)
+
+***CVE Monitoring***
+
+- CVE Monitoring [Here](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
+- Configurations [Here](https://www.elastic.co/docs/current/integrations/cisa_kevs)
+
+![bbot](cve.png)
