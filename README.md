@@ -30,6 +30,11 @@ certstream --full --json | sudo filebeat -c certstream/certstream.yml -e
 OR
 
 sudo websocat -t - autoreconnect:wss://certstream.calidog.io  | sudo filebeat -c certstream/certstream.yml -e
+
+OR
+- https://github.com/g0ldencybersec/gungnir
+
+gungnir -r program-data.txt -j | sudo filebeat -c gungnir.yml -e
 ```
 ![certstream](certstream/1.png)
 
