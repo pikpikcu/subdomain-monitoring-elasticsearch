@@ -1,0 +1,12 @@
+filebeat.inputs:
+  - type: stdin
+    json.keys_under_root: true
+    json.add_error_key: true
+    json.message_key: log
+    tags: ["json"]
+
+output.logstash:
+  hosts: ["localhost:5044"]
+
+setup.ilm.enabled: false
+setup.template.enabled: false
