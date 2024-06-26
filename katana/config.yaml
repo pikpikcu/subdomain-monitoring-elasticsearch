@@ -1,0 +1,7 @@
+host: "IP Elasticsearch"
+port: 9200
+ssl: false
+ssl-verification: false
+username: ""
+password: ""
+index-name: "katana"
