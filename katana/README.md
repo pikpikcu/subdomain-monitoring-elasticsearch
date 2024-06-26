@@ -19,3 +19,4 @@ index-name: "katana"
 ```
 cat urls.txt | katana -silent -js-crawl -jsluice -jsonl | katana-report
 ```
+![katana](katana.png)
